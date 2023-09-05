@@ -33,4 +33,5 @@ export const Tooltip = ({ content, children, postion = 'top' }) => {
 Tooltip.propTypes = {
   content: PropTypes.string,
   children: PropTypes.node,
+  postion: PropTypes.oneOf(['top', 'left', 'right']),
 };

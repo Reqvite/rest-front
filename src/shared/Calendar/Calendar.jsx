@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { classNames } from 'helpers/classNames';
-import { DropDown } from 'shared';
+import { DropDown, Text } from 'shared';
 import cls from './Calendar.module.scss';
 
 const monthOptions = [
@@ -36,13 +36,13 @@ export const Calendar = ({ onChange, newDate }) => {
     return new Date(year, month, 1).getDay();
   };
 
-  const handleMonthChange = (event) => {
-    setSelectedMonth(parseInt(event.value));
+  const handleMonthChange = (e) => {
+    setSelectedMonth(parseInt(e.value));
     setSelectedDay(1);
   };
 
-  const handleYearChange = (event) => {
-    setSelectedYear(parseInt(event.value));
+  const handleYearChange = (e) => {
+    setSelectedYear(parseInt(e.value));
     setSelectedDay(1);
   };
 
@@ -112,9 +112,9 @@ export const Calendar = ({ onChange, newDate }) => {
 
         <div className={cls.selectedDate}>
           {newDate && (
-            <>
+            <Text>
               Selected Date: {newDate.getMonth() + 1}/{newDate.getDate()}/{newDate.getFullYear()}
-            </>
+            </Text>
           )}
         </div>
       </div>

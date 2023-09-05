@@ -30,12 +30,8 @@ export const OrderCard = memo(
     const cardRef = useRef(null);
     const [isChecked, setIsChecked] = useState(сhecked || false);
     const [isSmall, setIsSmall] = useState(small);
-    let notServedDishes = 0;
-    const totalPrice = orderItems.reduce((acc, { dish, quantity, status }) => {
+    const totalPrice = orderItems.reduce((acc, { dish, quantity }) => {
       const price = acc + dish.price * quantity;
-      if (status !== 'Served') {
-        notServedDishes++;
-      }
       return formatNumberWithTwoDecimals(price);
     }, 0);
 

@@ -146,8 +146,6 @@ export const TransactionsTable = ({ timestamp }) => {
     nameFilter,
     pageIndex,
     pageSize,
-    refetch,
-    searchParams,
     setSearchParams,
     timestamp,
     transactionSortTypeOptions,
